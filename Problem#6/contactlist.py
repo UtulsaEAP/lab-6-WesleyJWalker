@@ -1,18 +1,13 @@
 def process_user_contacts(user_input):
     user_contacts = user_input.split()
-    '''names = []
-    numbers = []
-    for i in range(len(user_contacts)):
-        if i % 2 == 0:
-            numbers.append(user_contacts[i])
-        else:
-            names.append(user_contacts[i])
-
+    contactsList = {}
     # Put word pairs into a dictionary
-    
-    # Get contact name from input, output contact's phone number'''
+    for i in range(len(user_contacts)):
+        contact = user_contacts[i].split(",")
+        contactsList.update({contact[0]:contact[1]})
+    # Get contact name from input, output contact's phone number
     contact_name = input("Enter the contact name: ")
-    print(user_contacts[user_contacts.index(contact_name) + 1])
+    print(contactsList.pop(contact_name))
    
 if __name__ == '__main__':
     # Get input for word pairs
